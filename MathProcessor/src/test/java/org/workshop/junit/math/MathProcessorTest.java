@@ -2,6 +2,7 @@ package org.workshop.junit.math;
 
 import static org.junit.Assert.fail;
 import static org.junit.Assert.assertThat;
+import static org.fest.assertions.Assertions.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsEqual.equalTo;
 
@@ -116,5 +117,23 @@ public class MathProcessorTest
     	
     	//then
     	fail("Exception should have been thrown");
+    }
+    
+    @Test
+    public void shouldThrowExceptionWhenDividingByZeroWithTryCatchIdiom() {
+    	//given
+    	BigDecimal dividend = new BigDecimal("8.0");
+    	BigDecimal divisor = new BigDecimal("0.0");
+    	
+    	//when
+    	try {
+    		mathProcessor.divide(dividend, divisor);
+    		fail("Exception should have been thrown");
+    	} catch (Exception e) {
+    		assertThat(e)
+    			.isInstanceOf(IllegalArgumentException.class)
+    			.hasMessage("You can not divide by zero!");
+    	}
+
     }
 }
