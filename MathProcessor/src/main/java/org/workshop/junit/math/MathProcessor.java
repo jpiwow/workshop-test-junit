@@ -1,4 +1,4 @@
-package org.workshop.junit.MathProcessor;
+package org.workshop.junit.math;
 
 import java.math.BigDecimal;
 
