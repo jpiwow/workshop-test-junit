@@ -1,5 +1,7 @@
 package org.workshop.junit.math;
 
+import static java.math.BigDecimal.ZERO;
+
 import java.math.BigDecimal;
 
 public class MathProcessor 
@@ -13,6 +15,9 @@ public class MathProcessor
 	}
 	
 	public BigDecimal divide(BigDecimal dividend, BigDecimal divisor) {
+		if(ZERO.compareTo(divisor) == 0) {
+			throw new IllegalArgumentException("You can not divide by zero!");
+		}
 		return dividend.divide(divisor);
 	}
 	
