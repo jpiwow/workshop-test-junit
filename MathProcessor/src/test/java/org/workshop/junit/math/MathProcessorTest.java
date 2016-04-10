@@ -8,6 +8,7 @@ import static org.workshop.junit.utils.MyBigDecimalMatcher.myEqualsTo;
 
 import java.math.BigDecimal;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.workshop.junit.math.MathProcessor;
 
@@ -16,10 +17,31 @@ import org.workshop.junit.math.MathProcessor;
  */
 public class MathProcessorTest 
 {
+	MathProcessor mathProcessor;
+	
+	@Before
+	public void setUp() {
+		mathProcessor = new MathProcessor();
+	}
+	
+	@Test
+    public void shouldAdd() {
+    	//given
+    	BigDecimal augend = new BigDecimal("5.30");
+    	BigDecimal addend = new BigDecimal("1.2");
+    	BigDecimal expectedResult = new BigDecimal("6.5");
+    	
+    	//when
+    	BigDecimal actualResult = mathProcessor.add(augend, addend);
+    	
+    	//then
+    	assertThat(actualResult, myEqualsTo(expectedResult));
+    	
+    }
+	
     @Test
     public void shouldSubtract() {
     	//given
-    	MathProcessor mathProcessor = new MathProcessor();
     	BigDecimal minuend = new BigDecimal("5.30");
     	BigDecimal subtrahend = new BigDecimal("1.2");
     	BigDecimal expectedResult = new BigDecimal("4.1");
@@ -31,4 +53,35 @@ public class MathProcessorTest
     	assertThat(actualResult, myEqualsTo(expectedResult));
     	
     }
+    
+    @Test
+    public void shouldMultiply() {
+    	//given
+    	BigDecimal multiplicand = new BigDecimal("2.1");
+    	BigDecimal multiplier = new BigDecimal("3.0");
+    	BigDecimal expectedResult = new BigDecimal("6.3");
+    	
+    	//when
+    	BigDecimal actualResult = mathProcessor.multiply(multiplicand, multiplier);
+    	
+    	//then
+    	assertThat(actualResult, myEqualsTo(expectedResult));
+    	
+    }
+    
+    @Test
+    public void shouldDivide() {
+    	//given
+    	BigDecimal dividend = new BigDecimal("8.0");
+    	BigDecimal divisor = new BigDecimal("2.0");
+    	BigDecimal expectedResult = new BigDecimal("4.0");
+    	
+    	//when
+    	BigDecimal actualResult = mathProcessor.divide(dividend, divisor);
+    	
+    	//then
+    	assertThat(actualResult, myEqualsTo(expectedResult));
+    	
+    }
+    
 }
