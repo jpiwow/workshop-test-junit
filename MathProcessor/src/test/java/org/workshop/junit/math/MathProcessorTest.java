@@ -1,6 +1,8 @@
 package org.workshop.junit.math;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsEqual.equalTo;
 
 import java.math.BigDecimal;
 
@@ -24,7 +26,7 @@ public class MathProcessorTest
     	BigDecimal actualResult = mathProcessor.subtract(minuend, subtrahend);
     	
     	//then
-    	assertEquals(expectedResult, actualResult);
+    	assertThat(actualResult, is(equalTo(expectedResult)));
     	
     }
 }
