@@ -3,7 +3,7 @@ package org.workshop.junit.utils;
 import java.math.BigDecimal;
 
 import org.hamcrest.Description;
-import org.junit.matchers.TypeSafeMatcher;
+import org.hamcrest.TypeSafeMatcher;
 
 public class MyBigDecimalMatcher extends TypeSafeMatcher<BigDecimal> {
 

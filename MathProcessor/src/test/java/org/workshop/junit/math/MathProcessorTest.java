@@ -10,7 +10,9 @@ import static org.workshop.junit.utils.MyBigDecimalMatcher.myEqualsTo;
 import java.math.BigDecimal;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.workshop.junit.math.MathProcessor;
 
 /**
@@ -19,6 +21,9 @@ import org.workshop.junit.math.MathProcessor;
 public class MathProcessorTest 
 {
 	MathProcessor mathProcessor;
+	
+	@Rule
+	public final ExpectedException exception = ExpectedException.none();
 	
 	@Before
 	public void setUp() {
@@ -96,7 +101,20 @@ public class MathProcessorTest
     	
     	//then
     	fail("Exception should have been thrown");
-    	
     }
     
+    @Test
+    public void shouldThrowExceptionWhenDividingByZeroWithRule() {
+    	//given
+    	BigDecimal dividend = new BigDecimal("8.0");
+    	BigDecimal divisor = new BigDecimal("0.0");
+    	
+    	//when
+    	exception.expect(IllegalArgumentException.class);
+    	exception.expectMessage("You can not divide by zero!");
+    	mathProcessor.divide(dividend, divisor);
+    	
+    	//then
+    	fail("Exception should have been thrown");
+    }
 }
