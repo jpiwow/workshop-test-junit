@@ -1,6 +1,6 @@
 package org.workshop.junit.math;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import java.math.BigDecimal;
 
@@ -24,7 +24,7 @@ public class MathProcessorTest
     	BigDecimal actualResult = mathProcessor.subtract(minuend, subtrahend);
     	
     	//then
-    	assertTrue(expectedResult.equals(actualResult));
+    	assertEquals(expectedResult, actualResult);
     	
     }
 }
