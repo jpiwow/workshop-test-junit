@@ -49,7 +49,7 @@ public class NumbersMapperTest {
 		
 	}
 	
-	@Parameters
+	@Parameters(method="noConventionShouldMapToDecades")
 	@Test
 	public void shouldMapToDecades(BigDecimal numberToMap, String expectedDecade) {
 	    //given
@@ -63,7 +63,7 @@ public class NumbersMapperTest {
 	    
 	}
 	
-	public Object[] parametersForShouldMapToDecades() {
+	public Object[] noConventionShouldMapToDecades() {
 	    return $(
 	            $(new BigDecimal("5.0"), NumbersMapper.FIRST_DECADE),
 	            $(new BigDecimal("15.0"), NumbersMapper.SECOND_DECADE),
