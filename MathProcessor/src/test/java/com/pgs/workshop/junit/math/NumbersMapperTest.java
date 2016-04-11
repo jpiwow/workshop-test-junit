@@ -1,4 +1,4 @@
-package org.workshop.junit.math;
+package com.pgs.workshop.junit.math;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -12,6 +12,8 @@ import java.math.BigDecimal;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import com.pgs.workshop.junit.math.NumbersMapper;
 
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;

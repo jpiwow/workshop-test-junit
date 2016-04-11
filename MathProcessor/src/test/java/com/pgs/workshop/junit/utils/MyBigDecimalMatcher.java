@@ -1,4 +1,4 @@
-package org.workshop.junit.utils;
+package com.pgs.workshop.junit.utils;
 
 import java.math.BigDecimal;
 

@@ -1,12 +1,11 @@
-package org.workshop.junit.math;
+package com.pgs.workshop.junit.math;
 
 import static org.junit.Assert.fail;
 import static org.junit.Assert.assertThat;
+import static com.pgs.workshop.junit.utils.MyBigDecimalMatcher.myEqualsTo;
 import static org.fest.assertions.Assertions.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsEqual.equalTo;
-
-import static org.workshop.junit.utils.MyBigDecimalMatcher.myEqualsTo;
 
 import java.math.BigDecimal;
 
@@ -14,7 +13,8 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import org.workshop.junit.math.MathProcessor;
+
+import com.pgs.workshop.junit.math.MathProcessor;
 
 /**
  * Unit test for MathProcessor.

@@ -1,4 +1,4 @@
-package org.workshop.junit.math;
+package com.pgs.workshop.junit.math;
 
 import static java.math.BigDecimal.ZERO;
 
