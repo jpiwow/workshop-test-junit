@@ -6,6 +6,7 @@ import static org.junit.Assert.assertThat;
 import static org.hamcrest.core.AnyOf.anyOf;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.StringContains.containsString;
+import static junitparams.JUnitParamsRunner.$;
 
 import java.math.BigDecimal;
 
@@ -63,12 +64,12 @@ public class NumbersMapperTest {
 	}
 	
 	public Object[] parametersForShouldMapToDecades() {
-	    return new Object[] {
-	      new Object[] {new BigDecimal("5.0"), NumbersMapper.FIRST_DECADE},
-	      new Object[] {new BigDecimal("15.0"), NumbersMapper.SECOND_DECADE},
-	      new Object[] {new BigDecimal("25.0"), NumbersMapper.THIRD_DECADE},
-	      new Object[] {new BigDecimal("35.0"), NumbersMapper.OUT_OF_SCOPE}
-	    };
+	    return $(
+	            $(new BigDecimal("5.0"), NumbersMapper.FIRST_DECADE),
+	            $(new BigDecimal("15.0"), NumbersMapper.SECOND_DECADE),
+	            $(new BigDecimal("25.0"), NumbersMapper.THIRD_DECADE),
+	            $(new BigDecimal("35.0"), NumbersMapper.OUT_OF_SCOPE)
+	    );
 	}
 	
 	
