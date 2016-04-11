@@ -10,7 +10,7 @@ public class NumbersMapper {
 	public static final String THIRD_DECADE = "ThirdDecade";
 	public static final String OUT_OF_SCOPE = "OutOfScope";
 	
-	private static final BigDecimal TWENTY = new BigDecimal("30.0");
+	private static final BigDecimal TWENTY = new BigDecimal("20.0");
 	private static final BigDecimal THIRTY = new BigDecimal("30.0");
 	
 	public String decorateNumber(BigDecimal number) {
